@@ -1,0 +1,52 @@
+https://help.aliyun.com/zh/model-studio/openclaw-coding-plan
+https://www.cnblogs.com/leezx/p/19559613
+https://zhuanlan.zhihu.com/p/2003615348004525541
+https://watermelonwater.tech/insights/openclaw%E5%8D%87%E7%BA%A7%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/
+
+(1)
+regedit
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+EnableLUA=0
+reboot
+
+(2)
+https://nodejs.org/en/download/
+https://nodejs.org/dist/v24.16.0/node-v24.16.0-x64.msi
+cmd with admin exec
+
+(3)
+https://git-scm.com/install/windows
+https://github.com/git-for-windows/git/releases/download/v2.54.0.windows.1/Git-2.54.0-64-bit.exe
+ssh-keygen -t ed25519 -C "z-@1-"
+C:\Users\abc\.ssh\id_ed25519.pub
+github.com:Logo/Settings/SSH-and-GPG-keys/New-SSH-key
+
+(4)
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+vs_BuildTools.exe
+Desktop development with C++
+(add MSVC v143&142&141)
+
+(5)
+PowerShell with admin
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Get-ExecutionPolicy -Scope CurrentUser
+iwr -useb https://openclaw.ai/install.ps1 | iex
+[npm install -g openclaw@2026.4.23 | 2026.5.18]
+(log->C:\Users\abc\AppData\Local\npm-cache\_logs)
+
+(6)
+[openclaw onboard]
+openclaw gateway stop
+modify files
+C:\Users\abc\.openclaw\gateway.cmd
+openclaw dashboard
+(http://127.0.0.1:18789/)
+
+(7)
+openclaw uninstall
+npm uninstall *
+npm uninstall -g *
+npm cache clean --force
+uninstall nodejs
+rmdir npm|openclaw(%appdata%\npm | C:\Users\abc\AppData\Local\npm-cache | C:\Users\abc\AppData\Local\Temp\* | C:\Users\abc\.openclaw | C:\Windows\System32\Tasks\OpenClaw Gateway ( | C:\Users\abc\.npmrc | C:\Users\abc\.zshrc | C:\Users\abc\package.json | C:\Users\abc\package-lock.json ))

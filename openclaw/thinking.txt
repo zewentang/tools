@@ -1,0 +1,14 @@
+https://docs.openclaw.ai/zh-CN/tools/thinking
+
+(1)
+openclaw.json
+agents.defaults."thinkingDefault": "high"
+
+(2)
+cmd admin exec
+openclaw gateway restart
+
+(3)
+message send
+/reasoning on
+(/verbose on)

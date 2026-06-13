@@ -1,0 +1,4 @@
+openclaw cron list
+openclaw cron rm ID
+(openclaw cron add --thinking high --session main --name "定时报告天气" --cron "0 8 * * *" --tz "Asia/Shanghai" --system-event "尽快报告目前我所在地的天气状态，并且预报今天可能下雨的时间段，我通常在XX市XX区，除非前面说了去到其他地方，如果失败就间隔1分钟重试最多5次")
+openclaw cron add --thinking high --session isolated --name "定时报告天气" --cron "0 8 * * *" --tz "Asia/Shanghai" --message "尽快报告目前我所在地的天气状态，并且预报今天可能下雨的时间段，我通常在XX市XX区，除非前面说了去到其他地方，如果失败就间隔1分钟重试最多5次" --announce --channel feishu --to "ou_..."

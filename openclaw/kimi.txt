@@ -1,0 +1,10 @@
+https://platform.kimi.com/docs/guide/use-kimi-in-openclaw
+
+openclaw configure
+Local/Model/Moonshot AI (Kimi K2.6)/Kimi Code API key (subscription)/Enter Kimi API key/Browse all models/[kimi/kimi-for-coding]/Continue
+
+(old:)
+(kimi-coding/k2p6)
+(openclaw.json->delete : kimi/kimi-code & primary : kimi-coding/k2p6 & kimi-coding : k2p6)
+(models.json->kimi-coding : k2p6)
+(/model kimi-coding/k2p6)

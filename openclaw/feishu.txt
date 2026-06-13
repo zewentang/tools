@@ -1,0 +1,26 @@
+https://openclawchina.com/channels/feishu/
+https://bytedance.larkoffice.com/docx/MFK7dDFLFoVlOGxWCv5cTXKmnMh
+
+(1)
+(old:)
+(openclaw.json)
+(session."dmScope": "main")
+
+(2)
+https://open.feishu.cn/app
+App ID : ...
+App Secret : ...
+
+(3)
+openclaw configure
+Local/Channels/[Configure/link]/[Feishu/Lark]/(Enter App ID and App Secret manually) or (wait scan timed out 10min)/Feishu (feishu.cn) - China/Enter Feishu App ID/Enter App Secret/Open - respond in all groups (requires mention)/Finished/No/Continue
+
+(4)
+if fail then install:
+npx -y @larksuite/openclaw-lark install
+
+(5)
+https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/openclaw/openclaw-feishu-channel.html
+send message in feishu
+openclaw pairing approve feishu ...
+(restart openclaw)

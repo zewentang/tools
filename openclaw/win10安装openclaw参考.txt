@@ -1,0 +1,28 @@
+win10专业版安装openclaw步骤参考
+
+一、
+注册表regedit打开：
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+修改EnableLUA等于0【表示让程序默认以管理员身份运行】
+然后重启电脑
+这样应该可以避免C盘没有写权限
+
+二、
+安装git并且配置本机有github.com访问权限（Settings/SSH-and-GPG-keys/New-SSH-key）
+【参考https://cloud.tencent.cn/developer/article/2558319，需要从github下载依赖】
+
+三、
+打开 https://visualstudio.microsoft.com/visual-cpp-build-tools/ 下载生成工具vs_BuildTools.exe
+安装时必须选择“使用C++的桌面开发”
+【参考https://www.cnblogs.com/leezx/p/19559613，需要本地编译代码】
+
+四、
+管理员身份打开PowerShell，先运行：
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+【为了打开执行脚本的权限】
+接着运行openclaw安装脚本：
+iwr -useb https://openclaw.ai/install.ps1 | iex
+【如果没有安装nodejs，会自动下载安装nodejs v24.14.0】
+——
+如果openclaw安装过程出错，可以看日志目录找原因：
+C:\Users\用户名\AppData\Local\npm-cache\_logs
