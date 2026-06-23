@@ -1,0 +1,32 @@
+codex接第三方大模型
+
+一、下载和运行命令行版本（Codex CLI）
+网站：https://github.com/openai/codex/releases
+下载：https://github.com/openai/codex/releases/download/rust-v0.142.0/codex-x86_64-pc-windows-msvc.exe【308MB】
+下载后运行一次（运行起来即可关闭），这是为了生成目录“~/.codex”
+
+二、下载设置CC Switch
+网站：https://github.com/farion1231/cc-switch/releases
+下载：https://github.com/farion1231/cc-switch/releases/download/v3.16.3/CC-Switch-v3.16.3-Windows-Portable.zip【15MB】
+解压运行：cc-switch.exe
+添加启用OpenAI的大模型（主要包括：选择供应商、API Key、需要本地路由映射、思考能力、模型映射）；如果已经添加过就先保证“关闭Codex路由”然后“点击编辑”然后“点击保存”然后“再次打开Codex路由”，这是为了保证正确生成这些文件《~/.codex/auth.json》、《~/.codex/config.toml》和《~/.codex/cc-switch-model-catalog.json》
+注意：开启本地路由和启用Codex路由
+
+三、使用命令行版本（Codex CLI）
+建议把《codex-x86_64-pc-windows-msvc.exe》改名《codex.exe》然后存放在适当文件夹，并且把这个文件夹路径添加到系统环境变量Path，就能手工调用命令行版本（打开终端，cd工作目录，输入codex即可）
+平时通过“/model”切换模型，其他命令请看文档
+
+四、下载安装Codex桌面版
+网站：https://openai.com/zh-Hans-CN/codex/get-started/【点击：下载Windows版】
+下载：https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi
+运行：Codex Installer.exe【1.25MB】【注意这是Windows的Store安装包，需要等待下载约537.1MB】
+注意：不要直接打开“开始菜单的Codex”，须用Codex++启动Codex桌面版
+
+五、下载安装Codex++
+网站：https://github.com/BigPizzaV3/CodexPlusPlus/releases
+下载：https://github.com/BigPizzaV3/CodexPlusPlus/releases/download/v1.2.18/CodexPlusPlus-1.2.18-windows-x64-setup.exe【8.41MB】
+运行：CodexPlusPlus-1.2.18-windows-x64-setup.exe
+注意：须用“桌面的Codex++图标”启动Codex桌面版，这是为了跳过账号登录（首页等待十几秒后可以点击Skip“What type of work do you do?”）
+
+参考资料：
+https://labuladong.online/zh/ai-coding/codex/install-and-use/

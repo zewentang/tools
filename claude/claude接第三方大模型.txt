@@ -1,0 +1,50 @@
+claude接第三方大模型
+
+一、境外下载安装Claude Desktop桌面端
+1.1、可选只能用Code的EXE安装包
+网站：https://claude.ai/login【点击：Download dektop app】
+实际下载：https://downloads.claude.ai/releases/win32/x64/1.14271.0/Claude-c8f4d811b076f6d3bb0a320ac9da463cd82a6a11.exe【196MB】
+双击运行：Claude Setup.exe
+自动安装后，开始菜单会增加一项“Claude”，并且自动打开和显示窗口，这个窗口须在系统托盘图标右键退出
+（如果开始菜单出现两项“Claude”，就忽略第一项或者卸载第一项）
+（注意：运行时点击Cowork就会提示需要重装，忽略即可）
+
+1.2、可选“完整”MSIX安装包，包括Cowork和Code
+网站：https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows【点击：Claude MSIX (x64)】
+下载：https://claude.ai/api/desktop/win32/x64/msix/latest/redirect
+实际下载：https://downloads.claude.ai/releases/win32/x64/1.14271.0/Claude-c8f4d811b076f6d3bb0a320ac9da463cd82a6a11.msix【222MB】
+管理员PowerShell运行：Add-AppxPackage -Path "Claude.msix"
+（注意：如用Cowork必须安装运行Windows功能的“虚拟机平台”）
+
+二、设置第三方大模型
+2.1、开始菜单打开Claude，如果窗口显示空白，这是因为国内IP被Claude拒绝，请“打开VPN”或者“电脑断网”后，重新打开Claude才能看到窗口左上角的菜单入口；
+不要登录Claude账号；
+首先点击窗口菜单“Help > Troubleshooting > Enable Developer Mode”，并且点击“Enable”确认；
+然后点击窗口菜单“Developer > Configure Third-Party Inference...”，从而打开“Configure third-party inference”设置窗口；
+
+2.2、设置窗口的“Connection”，通常只需填写如下三项，建议配合CC Switch使用：
+Credential kind：Static API key
+Gateway base URL：http://127.0.0.1:15721
+Gateway API key：a【任意字符串】
+Model list：Add至少一个以“claude-”开头的模型ID，例如“claude-opus”、“claude-sonnet”、“claude-haiku”（因为Claude对模型ID做了过滤处理，所以通过CC Switch映射到真实大模型ID）
+——各个模型可以打开“Offer 1M-context variant”（为了可以选择使用1M上下文）
+然后点击“Apply Changes”按钮确认，并且点击“Save & Restart”立刻重新运行生效
+（注意：设置第三方大模型后，就不用“打开VPN”也不用“电脑断网”了）
+（备注：如果第三方大模型接受任意模型ID——类似缺省模型ID，那么就能不用CC Switch而直接用这个大模型的Anthropic协议地址和API Key）
+
+三、如果运行时提示安装Git，就从https://git-scm.com/install/windows下载安装Git，然后重新运行Claude Desktop
+
+四、下载更新Claude Code命令行版本
+4.1、从https://github.com/anthropics/claude-code/releases下载最新Claude Code命令行版本，例如v2.1.186的claude-win32-x64.zip（https://github.com/anthropics/claude-code/releases/download/v2.1.186/claude-win32-x64.zip），然后解压得到文件《claude.exe》（注意：exe文件属性能看版本号）
+
+4.2、打开文件夹“C:\Users\系统账号\AppData\Local\Claude-3p\claude-code\2.1.160\”（注意：最后的文件夹名称可能是其他版本号，应该就是桌面端所关联的命令行版本号）；
+把3.1得到的新版文件《claude.exe》复制到这个文件夹（因为桌面端会调用它）；
+另外，如果这个文件夹没有文件《.verified》，就要手工创建零字节大小的这个文件；
+
+4.3、把上面文件夹路径添加到系统环境变量Path，就能手工调用Claude Code命令行版本（打开终端，cd工作目录，输入claude即可）；
+
+五、下载设置CC Switch
+5.1、请从https://github.com/farion1231/cc-switch/releases下载CC Switch，例如CC-Switch-v3.16.3-Windows-Portable.zip（https://github.com/farion1231/cc-switch/releases/download/v3.16.3/CC-Switch-v3.16.3-Windows-Portable.zip），然后解压运行cc-switch.exe；
+
+5.2、参考资料设置CC Switch，首先“添加大模型”（主要包括：选择供应商、API Key、模型映射、默认兜底模型、最大强度思考），然后本地路由启用Claude并且地址为“http://127.0.0.1:15721”；
+https://www.luoli.monster/2026/05/08/claude-code-for-vs-codecc-switchdeepseek-v4%e9%85%8d%e7%bd%ae/
